@@ -56,6 +56,10 @@ var questions=[
     question:"Harry Potter's eye colour.",
     answer:"Green"
   }
+    {
+    question:"Where did Harry met Tom? ",
+    answer:"The Chamber of Secrets"
+  }
   
 ];
 
