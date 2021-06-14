@@ -1,12 +1,15 @@
 //Harry Quiz
-var readLineSync = require("readline-sync");
+ var readLineSync = require("readline-sync");
+const chalk=require("chalk");
+
 
 
 var score=0;
 
 function welcome(){
-  var name=readLineSync.question("What is you name ? ");
-console.log("Welcome "+name+"! "+"Let us see how well do you know Harry Potter ? ");
+  var name=readLineSync.question("What is your name ? ");
+console.log(chalk.bold.blue("Welcome ")+chalk.bold.yellow(name)+" !"+"Let us see how well do you know " +chalk.underline.bold.red("Harry Potter")+" ?");
+
 }
 
 
@@ -56,10 +59,6 @@ var questions=[
     question:"Harry Potter's eye colour.",
     answer:"Green"
   }
-    {
-    question:"Where did Harry met Tom? ",
-    answer:"The Chamber of Secrets"
-  }
   
 ];
 
@@ -68,11 +67,11 @@ var questions=[
 function play(question,answer){
   var userAnswer=readLineSync.question(question);
   if(userAnswer.toUpperCase() === answer.toUpperCase()) {
-    console.log("Right");
+    console.log(chalk.green("Right"));
     score++;
   }
   else{
-    console.log("Wrong");
+    console.log(chalk.red("Wrong"));
   }
 
   console.log("Current Score: ",score);
